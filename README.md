@@ -160,10 +160,10 @@ Our versioning uses [SemVer](https://semver.org/) and our commits follow the [Co
 
 <hr />
 
-![Coverage lines](https://raw.githubusercontent.com/LaurenceStokes/timeout-promise/main/badges/badge-lines.svg)
-![Coverage functions](https://raw.githubusercontent.com/LaurenceStokes/timeout-promise/main/badges/badge-functions.svg)
-![Coverage branches](https://raw.githubusercontent.com/LaurenceStokes/timeout-promise/main/badges/badge-branches.svg)
-![Coverage statements](https://raw.githubusercontent.com/LaurenceStokes/timeout-promise/main/badges/badge-statements.svg)
+![Coverage lines](https://raw.githubusercontent.com/LaurenceStokes/typekeeper/main/badges/badge-lines.svg)
+![Coverage functions](https://raw.githubusercontent.com/LaurenceStokes/typekeeper/main/badges/badge-functions.svg)
+![Coverage branches](https://raw.githubusercontent.com/LaurenceStokes/typekeeper/main/badges/badge-branches.svg)
+![Coverage statements](https://raw.githubusercontent.com/LaurenceStokes/typekeeper/main/badges/badge-statements.svg)
 
 1. Clone the repository
 
@@ -179,6 +179,6 @@ Our versioning uses [SemVer](https://semver.org/) and our commits follow the [Co
 
 <hr />
 
-See [CHANGELOG.md](https://github.com/LaurenceStokes/timeout-promise/blob/main/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/LaurenceStokes/typekeeper/blob/main/CHANGELOG.md)
 
 <br />
