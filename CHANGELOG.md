@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/laurencestokes/typekeeper/compare/v1.0.2...v1.1.0) (2023-03-30)
+
+
+### Bug Fixes
+
+* removed test files from compiled output ([fad0f8e](https://github.com/laurencestokes/typekeeper/commit/fad0f8e27db132f4de4f0861d5f3ed7efa6f12fd))
+
+
+
 ## [1.0.2](https://github.com/laurencestokes/typekeeper/compare/v1.0.1...v1.0.2) (2023-03-30)
 
 
