@@ -10,7 +10,7 @@
 
 <p align="center">
     <a href="https://github.com/LaurenceStokes/typekeeper/actions/workflows/validate.yml" target="_blank">
-        <img src="https://github.com/LaurenceStokes/timeout-promise/actions/workflows/validate.yml/badge.svg" alt="CI pipeline badge" />
+        <img src="https://github.com/LaurenceStokes/typekeeper/actions/workflows/validate.yml/badge.svg" alt="CI pipeline badge" />
     </a>
     <a href="https://www.npmjs.com/package/typekeeper" target="_blank">
         <img src="https://img.shields.io/npm/v/typekeeper.svg" alt="npmjs typekeeper" />
