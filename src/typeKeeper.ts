@@ -15,7 +15,7 @@ export type MethodKeys = `is${Type | 'NaN'}`;
 
 function isType<T extends Type>(
     elem: unknown,
-    type: T,
+    type: T
 ): elem is T extends 'Null'
     ? null
     : T extends 'Undefined'
