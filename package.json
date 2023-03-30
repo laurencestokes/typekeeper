@@ -5,7 +5,8 @@
     "main": "dist/typekeeper.js",
     "types": "dist/typekeeper.d.ts",
     "scripts": {
-        "build": "tsc --project tsconfig.json",
+        "prebuild": "rm -rf ./dist",
+        "build": "tsc --project tsconfig-build.json",
         "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx .",
         "check-types": "tsc",
         "prettier": "prettier --ignore-path .eslintignore \"**/*.+(js|json|ts|tsx)\"",
