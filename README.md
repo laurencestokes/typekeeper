@@ -17,6 +17,48 @@
     </a>
 </p>
 
+# What is this?
+
+This is a small, lightweight type checking library that also satisfies the TS compiler with typegaurds. It can be extended to have composite typegaurds, to check if something is an array of numbers for example, or an array of array of numbers (or, indeed, whatever!) at the type level.
+
+The inspiration for this came from viewing a [tweet]((https://twitter.com/toddmotto/status/1635423335742881792)) from [Todd Motto](https://twitter.com/toddmotto). It piqued my interest and I decided to look into it deeper and convert it to Typescript. Unfortunately, as it is, that implementation is not typesafe at the typescript level (which is to be expected!). However, what this means is that if you were to use that code to check for example `isArray` on `const variable: unknown = []`, and then try to do `variable.map` typescript would still complain even inside an if check using the `isArray` you've written. This library combines the two approaches - you get the runtime type checking and the compile type safety/IDE autocomplete from typescript. I then went a step further and for the case of arrays/objects, made it so you could construct composite type gaurds, to check if something is an array of numbers for example, or an array of array of numbers, or an array of objects of signature xyz (or, indeed, whatever you can come up with/be bothered to write a custom typegaurd callback for!).
+
+<br />
+
+## Quick Example:
+<br />
+
+```ts
+import typeKeeper from './typekeeper';
+
+const myArray: unknown = [1, 2, 3];
+// As expected, TS will complain as myArray is 'unknown'.
+myArray.map(x => x * 2)
+
+if (typeKeeper.isArray(myArray)) {
+  // TypeScript knows that myArray is an array here, but doesn't know the type of x
+  // so it's 'any', but TS won't complain
+  console.log(myArray.map(x => x * 2));
+}
+
+if (typeKeeper.isArray(myArray, typeKeeper.isNumber)) {
+  // TypeScript knows that myArray is an array of numbers here as we've passed a second check to isArray which ensures
+  // every element in the array passes the type predicate for isNumber
+  console.log(myArray.map(x => x * 2));
+}
+
+const myArrayOfArrays: unknown = [[1], [2], [3]];
+// Custom nested type predicate callback we can pass through to isArray
+const isNumberArray = (arg: any): arg is number[] => typeKeeper.isArray(arg, typeKeeper.isNumber);
+
+if (typeKeeper.isArray(myArrayOfArrays, isNumberArray)) {
+  // TypeScript knows that myArray is an array of array of numbers here
+  // It knows 'x' is of type array, with each element being a number, and so knows y is a number
+  console.log(myArrayOfArrays.map((x) => x.map(y => y * 2)));
+}
+```
+<br />
+
 # Table of Contents
 
 1. [Quick start guide](#id-section1)
@@ -90,7 +132,6 @@ if (typeKeeper.isArray(myArrayOfArrays, isNumberArray)) {
   // TypeScript knows that myArray is an array of array of numbers here
   // It knows 'x' is of type array, with each element being a number, and so knows y is a number
   console.log(myArrayOfArrays.map((x) => x.map(y => y * 2)));
-  console.log('isNumberArrayRecursive');
 }
 
 const myArray: unknown = [1, 2, 3];
